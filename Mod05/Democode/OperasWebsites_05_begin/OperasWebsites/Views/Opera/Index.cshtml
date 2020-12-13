@@ -12,6 +12,7 @@
     <title>Index</title>
 </head>
 <body>
+    @Html.Partial("_alertMsg")
     <p>
         @Html.ActionLink("Create New", "Create")
     </p>
@@ -31,21 +32,20 @@
 
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Title)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Year)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Composer)
-                </td>
-                <td>
-                    @Html.ActionLink("Details", "Details", new { id = item.OperaID }) |
-                </td>
-            </tr>
-        }
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Title)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Year)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Composer)
+    </td>
+    <td>
+        @Html.ActionLink("Details", "Details", new { id = item.OperaID }) |
+    </td>
+</tr>}
 
     </table>
 </body>

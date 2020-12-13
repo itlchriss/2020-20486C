@@ -1,0 +1,31 @@
+﻿@model OperasWebsites.Models.Opera
+@{
+    ViewBag.Title = "Add to Opera";
+}
+
+<h2>Add to Opera</h2>
+
+@using (Html.BeginForm("Create", "Opera", FormMethod.Post))
+{
+    <p>
+        @Html.ValidationSummary()
+    </p>
+    <p>
+        @Html.LabelFor(m => m.Title)
+        @Html.EditorFor(m => m.Title)
+        @Html.ValidationMessageFor(m => m.Title)
+    </p>
+    <p>
+        @Html.LabelFor(m => m.Year)
+        @Html.EditorFor(m => m.Year)
+        @Html.ValidationMessageFor(m => m.Year)
+    </p>
+    <p>
+        @Html.LabelFor(m => m.Composer)
+        @Html.EditorFor(m => m.Composer)
+        @Html.ValidationMessageFor(m => m.Composer)
+    </p>
+    <input type="submit" value="Submit"/>
+    @Html.ActionLink("Back to List", "Index")
+}
+
