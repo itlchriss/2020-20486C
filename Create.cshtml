@@ -1,0 +1,26 @@
+﻿@model WebAPI.Models.DataModel.PersonalInfo
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm("DoCreate", "Home", FormMethod.Post))
+{
+    @Html.LabelFor(m => m.firstName)
+    @Html.TextBoxFor(m => m.firstName)
+    <br />
+    @Html.LabelFor(m => m.lastName)
+    @Html.TextBoxFor(m => m.lastName)
+    <br />
+    @Html.Label("Address Line 1")
+    @Html.TextBox("AddressLine1")
+    <br />
+    @Html.Label("Address Line 2")
+    @Html.TextBox("AddressLine2")
+    <br />
+    @Html.Label("Address Line 3")
+    @Html.TextBox("AddressLine3")
+    <br />
+    <input type="submit" value="Submit" />
+}
